@@ -2,6 +2,9 @@ import typer
 from rich import print
 
 
+app = typer.Typer()
+
+@app.command()  
 def main(name: str, lastname: str = "", formal: bool = False):
     """
     Say hi to NAME, optionally with --lastname.
@@ -13,7 +16,23 @@ def main(name: str, lastname: str = "", formal: bool = False):
     else:
         print(f"Hello, {name} {lastname}")
 
+@app.command()  
+def mywc(file, c: bool = False):
+    try:
+        with open(file, 'rb') as f:
+            content = f.read()
+            
+            if c:
+                bytes = len(content)
+                print(f"{bytes} {file}")
+    
+    except FileNotFoundError:
+        print(f"File {file} not found.")
+    
+    except Exception as e:
+        print(f"Error: {e}")
+    
 
 
 if __name__ == "__main__":
-    typer.run(main)
+    app()
