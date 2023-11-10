@@ -17,7 +17,11 @@ def main(name: str, lastname: str = "", formal: bool = False):
         print(f"Hello, {name} {lastname}")
 
 @app.command()  
-def mywc(file, c: bool = False):
+def mywc(
+    file, 
+    c: bool = typer.Option(False, help="Print the bytes count"),
+    l: bool = typer.Option(False, help="Print the newlines count")
+):
     try:
         with open(file, 'rb') as f:
             content = f.read()
@@ -25,6 +29,10 @@ def mywc(file, c: bool = False):
             if c:
                 bytes = len(content)
                 print(f"{bytes} {file}")
+                
+            if l:
+                lines = content.count(b'\n')
+                print(f"{lines} {file}")
     
     except FileNotFoundError:
         print(f"File {file} not found.")
