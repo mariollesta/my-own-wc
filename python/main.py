@@ -20,7 +20,8 @@ def main(name: str, lastname: str = "", formal: bool = False):
 def mywc(
     file, 
     c: bool = typer.Option(False, help="Print the bytes count"),
-    l: bool = typer.Option(False, help="Print the newlines count")
+    l: bool = typer.Option(False, help="Print the newlines count"),
+    w: bool = typer.Option(False, help="Print the words count")
 ):
     try:
         with open(file, 'rb') as f:
@@ -33,6 +34,10 @@ def mywc(
             if l:
                 lines = content.count(b'\n')
                 print(f"{lines} {file}")
+                
+            if w: 
+                words = content.split()
+                print(f"{len(words)} {file}")
     
     except FileNotFoundError:
         print(f"File {file} not found.")
