@@ -1,4 +1,4 @@
-import typer
+import typer, chardet
 from rich import print
 
 
@@ -21,7 +21,8 @@ def mywc(
     file, 
     c: bool = typer.Option(False, help="Print the bytes count"),
     l: bool = typer.Option(False, help="Print the newlines count"),
-    w: bool = typer.Option(False, help="Print the words count")
+    w: bool = typer.Option(False, help="Print the words count"),
+    m: bool = typer.Option(False, help="Print the characters count")
 ):
     try:
         with open(file, 'rb') as f:
@@ -38,6 +39,30 @@ def mywc(
             if w: 
                 words = content.split()
                 print(f"{len(words)} {file}")
+                
+            if m:
+                encoding_result = chardet.detect(content)
+                encoding = encoding_result['encoding']
+                
+                try:
+                    with open(file, 'r', encoding=encoding) as tmp: 
+                        line_breaks = 0
+                        characters_per_line = 0
+                        total_characters = 0
+                        
+                        lines = tmp.readlines()
+                        line_breaks = len(lines)
+                        
+                        for line in lines:
+                           characters_per_line += len(line)
+                        
+                        total_characters = characters_per_line + line_breaks + 1
+                        
+                        print(f"{total_characters} {file}")
+                    
+                except Exception as e:
+                    print(f"Error: {e}")
+                    
     
     except FileNotFoundError:
         print(f"File {file} not found.")
