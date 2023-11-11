@@ -18,12 +18,17 @@ def main(name: str, lastname: str = "", formal: bool = False):
 
 @app.command()  
 def mywc(
-    file, 
+    file = typer.Argument(default=any, help="File PATH"), 
     c: bool = typer.Option(False, help="Print the bytes count"),
     l: bool = typer.Option(False, help="Print the newlines count"),
     w: bool = typer.Option(False, help="Print the words count"),
     m: bool = typer.Option(False, help="Print the characters count")
 ):
+    
+    """
+    Print newline, word, and byte counts for a FILE.
+    With no FILE, read standard input.
+    """
     try:
         with open(file, 'rb') as f:
             content = f.read()
@@ -62,7 +67,12 @@ def mywc(
                     
                 except Exception as e:
                     print(f"Error: {e}")
-                    
+            
+            else:
+                lines = content.count(b'\n')
+                words = len(content.split())
+                bytes = len(content)
+                print(f"{lines} {words} {bytes} {file}")     
     
     except FileNotFoundError:
         print(f"File {file} not found.")
