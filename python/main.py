@@ -4,21 +4,10 @@ from rich import print
 
 app = typer.Typer()
 
-@app.command()  
-def main(name: str, lastname: str = "", formal: bool = False):
-    """
-    Say hi to NAME, optionally with --lastname.
-    
-    If --formal is used, say hi very formally.
-    """
-    if formal:
-        print(f"Good day Mr. {name} {lastname}.")    
-    else:
-        print(f"Hello, {name} {lastname}")
 
 @app.command()  
 def mywc(
-    file = typer.Argument(default=any, help="File PATH"), 
+    file:str = typer.Argument("", help="File PATH"), 
     c: bool = typer.Option(False, help="Print the bytes count"),
     l: bool = typer.Option(False, help="Print the newlines count"),
     w: bool = typer.Option(False, help="Print the words count"),
@@ -66,16 +55,16 @@ def mywc(
                         print(f"{total_characters} {file}")
                     
                 except Exception as e:
-                    print(f"Error: {e}")
+                    print(f"Error: {e}")    
             
             else:
                 lines = content.count(b'\n')
                 words = len(content.split())
                 bytes = len(content)
-                print(f"{lines} {words} {bytes} {file}")     
+                print(f"{lines} {words} {bytes} {file}")        
     
     except FileNotFoundError:
-        print(f"File {file} not found.")
+        print(f"Error: File not found.")
     
     except Exception as e:
         print(f"Error: {e}")
