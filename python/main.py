@@ -3,16 +3,16 @@ import sys
 from rich import print
 
 
-app = typer.Typer()
+app = typer.Typer(rich_markup_mode="rich")
 
 
-@app.command()  
+@app.command(epilog="Made by [green]mario llesta[/green]")  
 def mywc(
     file:str = typer.Argument("", help="File PATH"), 
-    c: bool = typer.Option(False, help="Print the bytes count"),
-    l: bool = typer.Option(False, help="Print the newlines count"),
-    w: bool = typer.Option(False, help="Print the words count"),
-    m: bool = typer.Option(False, help="Print the characters count")
+    c: int = typer.Option(None, show_default=False, help="Print the bytes count", rich_help_panel="Main Options"),
+    l: int = typer.Option(None, show_default=False, help="Print the newlines count", rich_help_panel="Main Options"),
+    w: int = typer.Option(None, show_default=False, help="Print the words count", rich_help_panel="Main Options"),
+    m: int = typer.Option(None, show_default=False, help="Print the characters count", rich_help_panel="Main Options")
 ):
     
     """
@@ -28,6 +28,7 @@ def mywc(
         else:
             content = sys.stdin.buffer.read() # bytes
         
+        print(content)
         
         bytes = 0
         num_lines = 0
@@ -35,7 +36,7 @@ def mywc(
         
         bytes = len(content)
         num_lines = content.count(b'\n') 
-        num_words = content.split()
+        num_words = len(content.split())
           
         if c:
             print(f"{bytes} {file}")
@@ -44,7 +45,7 @@ def mywc(
             print(f"{num_lines} {file}")
             
         elif w: 
-            print(f"{len(num_words)} {file}")
+            print(f"{num_words} {file}")
             
         elif m:
             characters_per_line = 0
