@@ -23,51 +23,56 @@ def mywc(
         
         if file:
             with open(file, 'rb') as f:
-                content = f.read()
+                content = f.read() # bytes
+                       
         else:
-            content = sys.stdin.buffer.read()
-                
-             
+            content = sys.stdin.buffer.read() # bytes
+        
+        
+        bytes = 0
+        num_lines = 0
+        num_words = 0
+        
+        bytes = len(content)
+        num_lines = content.count(b'\n') 
+        num_words = content.split()
+          
         if c:
-            bytes = len(content)
             print(f"{bytes} {file}")
             
         elif l:
-            lines = content.count(b'\n')
-            print(f"{lines} {file}")
+            print(f"{num_lines} {file}")
             
         elif w: 
-            words = content.split()
-            print(f"{len(words)} {file}")
+            print(f"{len(num_words)} {file}")
             
         elif m:
+            characters_per_line = 0
+            total_characters = 0
+            
             encoding_result = chardet.detect(content)
             encoding = encoding_result['encoding']
             
             try:
-                with open(file, 'r', encoding=encoding) as tmp: 
-                    line_breaks = 0
-                    characters_per_line = 0
-                    total_characters = 0
-                    
-                    lines = tmp.readlines()
-                    line_breaks = len(lines)
-                    
-                    for line in lines:
+                if file:      
+                    with open(file, 'r', encoding=encoding) as tmp: 
+                        lines = tmp.readlines()
+                            
+                else:
+                    lines = content.decode(encoding)
+                    num_lines = 0 # line breaks are already included in each line length
+                
+                for line in lines:
                         characters_per_line += len(line)
-                    
-                    total_characters = characters_per_line + line_breaks + 1
-                    
-                    print(f"{total_characters} {file}")
+                        
+                total_characters = characters_per_line + num_lines + 1
+                print(f"{total_characters} {file}")
                 
             except Exception as e:
                 print(f"Error: {e}")    
         
         else:
-            lines = content.count(b'\n')
-            words = len(content.split())
-            bytes = len(content)
-            print(f"{lines} {words} {bytes} {file}")
+            print(f"{num_lines} {num_words} {bytes} {file}")
 
     except FileNotFoundError:
         print(f"Error: File not found.")
