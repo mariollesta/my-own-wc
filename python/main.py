@@ -6,13 +6,13 @@ from rich import print
 app = typer.Typer(rich_markup_mode="rich")
 
 
-@app.command(epilog="Made by [green]mario llesta[/green]")  
+@app.command(epilog="Made by [green]mariollesta[/green]")  
 def mywc(
     file:str = typer.Argument("", help="File PATH"), 
-    c: int = typer.Option(None, show_default=False, help="Print the bytes count", rich_help_panel="Main Options"),
-    l: int = typer.Option(None, show_default=False, help="Print the newlines count", rich_help_panel="Main Options"),
-    w: int = typer.Option(None, show_default=False, help="Print the words count", rich_help_panel="Main Options"),
-    m: int = typer.Option(None, show_default=False, help="Print the characters count", rich_help_panel="Main Options")
+    c: bool = typer.Option(default=0, show_default=None, help="Print the bytes count", rich_help_panel="Main Options"),
+    l: bool = typer.Option(default=0, show_default=None, help="Print the newlines count", rich_help_panel="Main Options"),
+    w: bool = typer.Option(default=0, show_default=None, help="Print the words count", rich_help_panel="Main Options"),
+    m: bool = typer.Option(default=0, show_default=None, help="Print the characters count", rich_help_panel="Main Options")
 ):
     
     """
@@ -27,8 +27,6 @@ def mywc(
                        
         else:
             content = sys.stdin.buffer.read() # bytes
-        
-        print(content)
         
         bytes = 0
         num_lines = 0
