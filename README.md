@@ -11,3 +11,4 @@
 
 ---
 
+Following the guidelines of the Write Your Own wc Tool project of the Coding Challenges blog, the goal of this project is the development of the Unix wc tool.
