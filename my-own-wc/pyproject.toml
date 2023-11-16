@@ -1,12 +1,12 @@
 [tool.poetry]
-name = "my-own-wc"
+name = "mywc"
 version = "0.1.0"
 description = ""
 authors = ["mariollesta"]
 readme = "README.md"
 
 [tool.poetry.scripts]
-mywc = "my_own_wc.main:app"
+mywc = "mywc.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.12"
