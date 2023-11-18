@@ -19,13 +19,13 @@ The wc command is used to count the number of lines, words and bytes in a text f
 
 ---
 
-# Installation
+## How to use
 
 
 
 ---
 
-# How to use
+
 
 
 
