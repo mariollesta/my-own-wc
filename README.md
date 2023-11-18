@@ -11,4 +11,22 @@
 
 ---
 
-Following the guidelines of the Write Your Own wc Tool project of the Coding Challenges blog, the goal of this project is the development of the Unix wc tool.
+# Summary 
+
+Following the guidelines of the Write Your Own wc Tool project of the [Coding Challenges blog](https://codingchallenges.fyi/), the goal of this project is the development my own version of the Unix wc tool.
+
+The wc command is used to count the number of lines, words and bytes in a text file passed as a parameter. On the other hand, if no text file is specified, the command will read from the standard input.
+
+---
+
+# Installation
+
+
+
+---
+
+# How to use
+
+
+
+---
