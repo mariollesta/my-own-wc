@@ -11,7 +11,7 @@
 
 ---
 
-# Summary 
+## Summary 
 
 Following the guidelines of the Write Your Own wc Tool project of the [Coding Challenges blog](https://codingchallenges.fyi/), the goal of this project is the development my own version of the Unix wc tool.
 
