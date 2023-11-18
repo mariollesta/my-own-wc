@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "mywc"
+version = "0.1.0"
+description = ""
+authors = ["mariollesta"]
+readme = "README.md"
+
+[tool.poetry.scripts]
+mywc = "mywc.main:app"
+
+[tool.poetry.dependencies]
+python = "^3.12"
+typer = {extras = ["all"], version = "^0.9.0"}
+chardet = "^5.2.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
