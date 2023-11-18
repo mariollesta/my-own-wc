@@ -2,7 +2,7 @@
 ![](./images/mywc_banner.png)
 
 <p align="center">
-<em>Writting my own wc tool</em>
+<em>Writting my own wc Unix tool</em>
 </p>
 
 ---
