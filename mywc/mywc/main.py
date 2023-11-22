@@ -10,7 +10,7 @@ Outline:
 This module contains the main code of the mywc tool.
 """
 
-
+ 
 # Imports 
 import typer, chardet
 import sys

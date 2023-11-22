@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mywc"
-version = "0.2.0"
+version = "0.2.0" 
 description = ""
 authors = ["mariollesta"]
 readme = "README.md"
