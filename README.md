@@ -28,7 +28,9 @@ The wc command is used to count the number of lines, words and bytes in a text f
 
 ## Set up
 
-
+```terminal
+git clone https://github.com/mariollesta/my-own-wc.git
+```
 
 ---
 
