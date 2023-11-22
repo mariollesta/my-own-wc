@@ -1,3 +1,17 @@
+#!/usr/bin/env python
+
+
+"""
+Filename: main.py
+Author: Mario Llesta
+Fecha de Creación: 18/11/2023
+
+Outline:
+This module contains the main code of the mywc tool.
+"""
+
+
+# Imports 
 import typer, chardet
 import sys
 from rich import print
@@ -6,6 +20,7 @@ from rich import print
 app = typer.Typer(rich_markup_mode="rich")
 
 
+# Functions
 @app.command(epilog="Made by [green]mariollesta[/green]")  
 def mywc(
     file:str = typer.Argument("", help="File PATH"), 
@@ -16,6 +31,7 @@ def mywc(
 ):
     
     """
+    Outline:
     Print newline, word, and byte counts for a FILE.
     With no FILE, read standard input.
     """
