@@ -11,7 +11,7 @@
 
 ---
 
-## Summary 
+## About
 
 Following the guidelines of the [Coding Challenges blog](https://codingchallenges.fyi/), the goal of this project is the development of a proprietary version of the Unix command line tool wc
 
