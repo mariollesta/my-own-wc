@@ -19,7 +19,9 @@ The wc command is used to count the number of lines, words and bytes in a text f
 
 ## Requirements
 
-[![Python](https://img.shields.io/badge/Python-3.11+-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=101010)](https://python.org)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white&labelColor=101010)](https://python.org)
+
+[![PyPI](https://img.shields.io/badge/pypi-22.0.2+-#3775A9?style=for-the-badge&logo=pypi&logoColor=white&labelColor=101010)](https://pypi.org/project/pip/)
 
 
 ---
