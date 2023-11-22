@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "mywc"
-version = "0.2.0" 
+version = "0.3.0" 
 description = ""
 authors = ["mariollesta"]
 readme = "README.md"
@@ -9,7 +9,7 @@ readme = "README.md"
 mywc = "mywc.main:app"
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = "^3.10.12"
 typer = {extras = ["all"], version = "^0.9.0"}
 chardet = "^5.2.0"
 
