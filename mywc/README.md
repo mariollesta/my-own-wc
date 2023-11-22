@@ -1,3 +1,3 @@
 # mywc
 
-Writting my own wc Unix tool
+Writting my own wc Unix tool 
