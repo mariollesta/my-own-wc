@@ -34,16 +34,22 @@ def mywc(
     Outline:
     Print newline, word, and byte counts for a FILE.
     With no FILE, read standard input.
+    
+    If no input or file is entered, the program will do nothing. 
+    In this case, press Ctrl/Cmd + c to stop its execution.
     """
+    
+    content = 0
+    
     try:
         
         if file:
             with open(file, 'rb') as f:
                 content = f.read() # bytes
                        
-        else:
+        else: 
             content = sys.stdin.buffer.read() # bytes
-        
+                        
         bytes = 0
         num_lines = 0
         num_words = 0
@@ -51,7 +57,7 @@ def mywc(
         bytes = len(content)
         num_lines = content.count(b'\n') 
         num_words = len(content.split())
-          
+        
         if c:
             print(f"{bytes} {file}")
             
@@ -68,26 +74,24 @@ def mywc(
             encoding_result = chardet.detect(content)
             encoding = encoding_result['encoding']
             
-            try:
-                if file:      
-                    with open(file, 'r', encoding=encoding) as tmp: 
-                        lines = tmp.readlines()
-                            
-                else:
-                    lines = content.decode(encoding)
-                    num_lines = 0 # line breaks are already included in each line length
-                
-                for line in lines:
-                        characters_per_line += len(line)
+            if file:      
+                with open(file, 'r', encoding=encoding) as tmp: 
+                    lines = tmp.readlines()
                         
-                total_characters = characters_per_line + num_lines + 1
-                print(f"{total_characters} {file}")
+            else:
+                lines = content.decode(encoding)
+                num_lines = 0 # line breaks are already included in each line length
+            
+            for line in lines:
+                    characters_per_line += len(line)
+                    
+            total_characters = characters_per_line + num_lines + 1
+            print(f"{total_characters} {file}")
                 
-            except Exception as e:
-                print(f"Error: {e}")    
-        
+              
         else:
             print(f"{num_lines} {num_words} {bytes} {file}")
+            
 
     except FileNotFoundError:
         print(f"Error: File not found.")
