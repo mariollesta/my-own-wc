@@ -28,9 +28,29 @@ The wc command is used to count the number of lines, words and bytes in a text f
 
 ## Set up
 
+Download the application repository:
+
 ```terminal
 git clone https://github.com/mariollesta/my-own-wc.git
 ```
+
+> Note: It will be downloaded to the directory where we are located in our terminal by executing the command
+
+Install the packages:
+
+> 
+
+```terminal
+git clone https://github.com/mariollesta/my-own-wc.git
+```
+
+>
+
+```terminal
+git clone https://github.com/mariollesta/my-own-wc.git
+```
+
+
 
 ---
 
