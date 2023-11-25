@@ -71,5 +71,40 @@ In this way, you will be able to see how the tool works as well as the options a
 
 Afterwards, 
 
+if you want to know the number of bytes in a file, you would execute the command:
+
+```terminal
+mywc --c <PATH to FILE> 
+```
+
+if you want to know the number of lines:
+
+```terminal
+mywc --l <PATH to FILE> 
+```
+
+if you want to know the number of words: 
+
+```terminal
+mywc --w <PATH to FILE>
+```
+
+if you want to know the number of charecters:
+
+```terminal
+mywc --m <PATH to FILE>
+```
+
+Finally, if no options are provided, it is the equivalent to the -c, -l and -w options. 
+
+```terminal
+mywc --m <PATH to FILE>
+```
+
+In addition, as the help shows, if no file is provided, it will try to read from the standard input. So, if we wanted to count the bytes of a file by reading from the standard input we could do it as follows:
+
+```terminal
+cat <PATH to FILE> | mywc --m 
+```
 
 ---
