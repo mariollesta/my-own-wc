@@ -55,6 +55,18 @@ pip install <PATH>/mywc-<version>-py3-none-any.whl
 
 ## How to use
 
+You can use the attached file in the repository "test.txt" to test the operation of the application.
 
+To see the operation and options of the program, we run it with the help option:
+
+```terminal
+mywc --help
+```
+
+You will see something like what is shown in the following image:
+
+
+
+In this way, you will be able to see how the tool works as well as the options available to you.
 
 ---
