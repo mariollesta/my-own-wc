@@ -65,8 +65,11 @@ mywc --help
 
 You will see something like what is shown in the following image:
 
-
+![](./images/mywc_help.png)
 
 In this way, you will be able to see how the tool works as well as the options available to you.
+
+Afterwards, 
+
 
 ---
