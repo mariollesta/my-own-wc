@@ -35,7 +35,8 @@ Download the application repository:
 git clone https://github.com/mariollesta/my-own-wc.git
 ```
 
-> Note: It will be downloaded to the directory where we are located in our terminal by executing the command
+> [!Note]
+> It will be downloaded to the directory where we are located in our terminal by executing the command
 
 Install the packages:
 
@@ -51,7 +52,8 @@ pip install --user <PATH>/mywc-<version>-py3-none-any.whl
 pip install <PATH>/mywc-<version>-py3-none-any.whl
 ```
 
-> Note: If the program does not work, check that the directory where the executable is located is in the PATH variable of the system.
+> [!Note]
+> If the program does not work, check that the directory where the executable is located is in the PATH variable of the system.
 
 ---
 
