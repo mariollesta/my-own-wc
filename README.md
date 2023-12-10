@@ -102,7 +102,7 @@ mywc --m <PATH to FILE>
 Finally, if no options are provided, it is the equivalent to the -c, -l and -w options. 
 
 ```terminal
-mywc --m <PATH to FILE>
+mywc <PATH to FILE>
 ```
 
 In addition, as the help shows, if no file is provided, it will try to read from the standard input. So, if we wanted to count the bytes of a file by reading from the standard input we could do it as follows:
