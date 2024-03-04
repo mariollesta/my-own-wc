@@ -1,5 +1,5 @@
 
-![](./images/mywc_banner.png)
+![](./images/mywc.png)
 
 <p align="center">
 <em>Writting my own wc Unix tool</em>
